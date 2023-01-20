@@ -1,0 +1,78 @@
+<%- include("./partials/header") %>
+
+<nav>
+  <input type="checkbox" id="check" class="navbar close">
+  <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <label class="logo"><a href="#home"><img src="images/assets/logo.png" height="80px"></a></label>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#sectionthree">Tools</a></li>
+    <li><a href="#sectiontwo">Benefits</a></li>
+    <li><a href="#"><i class="fa-solid fa-user" height="50px"></i></a></li>
+    <label class="theme-switch" for="checkbox">
+    <input type="checkbox" id="checkbox" />
+    <div class="slider round"></div>
+    </label>
+    <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></i></a></li>
+  </ul>
+</nav>
+
+
+<section class="container forms">
+<div class="form login">
+  <div class="form-content">
+    <header>Login</header>
+    <% if (messages.error) { %>
+      <%= messages.error %>
+    <% } %>
+    <form action="/login" method="POST">
+      <div class="field input-field">
+        <input type="email" placeholder="E-mail" name="email"class="input" id="exampleInputEmail1"/>
+      </div>
+
+      <div class="field input-field">
+        <input type="password" placeholder="Password"  name="password" class="password" id="exampleInputPassword1"/>
+        <i class="bx bx-hide eye-icon"></i>
+      </div>
+
+      <div class="field button-field">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+
+    <div class="form-link">
+      <span>Don't have an account? <a href="/register" class="link signup-link">Register here</a></span>
+    </div>
+  </div>
+</div>
+
+<div class="form signup">
+  <div class="form-content">
+    <header>Register</header>
+    <form action="/register" method="POST">
+      <div class="field input-field">
+        <input type="email" name="email" placeholder="E-mail" class="input" />
+      </div>
+
+      <div class="field input-field">
+        <input type="password" placeholder="Create password" class="password"name="password"/>
+        <i class="bx bx-hide eye-icon"></i>
+      </div>
+
+      <div class="field button-field">
+        <button type="submit">Confirm</button>
+      </div>
+    </form>
+
+    <div class="form-link">
+      <span
+        >Already have an account?
+        <a href="/login" class="link login-link">Login</a></span
+      >
+    </div>
+  </div>
+</div>
+</section>
+<%- include("./partials/footer") %>

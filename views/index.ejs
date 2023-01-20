@@ -1,0 +1,140 @@
+<%- include("./partials/header") %>
+
+<div class="loader-wrapper">
+    <span class="loader"><span class="inner loader"></span></span>
+  </div>
+
+  <nav>
+    <input type="checkbox" id="check" class="navbar close">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="#home"><img src="images/assets/logo.png" height="80px"></a></label>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sectiontwo">Benefits</a></li>
+      <li><a href="#sectionthree">Tools</a></li>
+      <li><a href="/login"><i class="fa-solid fa-user" height="50px"></i></a></li>
+      <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+      </label>
+      <li><a href="#popup1"><i class="fa-solid fa-ellipsis-vertical"></i></i></a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <div class="graph">
+      <img src="images/assets/graph.png" height="500px">
+      <span class="tooltip one" data-tooltip="Set the deadline with our agenda">?</span>
+      <span class="tooltip two" data-tooltip="Start studying for the deadline">?</span>
+      <span class="tooltip three" data-tooltip="Organize your tasks with our to-do list">?</span>
+      <span class="tooltip four" data-tooltip="Unlock achievements as you progress">?</span>
+    </div>
+  <div class="text-box">
+    <h1> Welcome to <br> Study Corner</h1>
+    <p> Are you ready to learn ?</p>
+    <a href="#" class="getStarted"> Get Started </a>
+  </div>
+  <div class="boxy">
+    <a href="#sectiontwo">
+    <span></span>
+    <span></span>
+  </a>
+  </div>
+  </section>
+
+  <section id="sectiontwo" class="benefits">
+    <h1 class="heading">Benefits</h1>
+    <div class="box-container">
+      <div class="box lightBlue" data-aos="fade-right">
+        <img src="images/assets/organization.png" height="200px" alt="" />
+        <h3>Improves organization </h3>
+        <p>Using Student Corner<br> you are learning how to be better with <br>time managment and this makes you more organized.</p>
+      </div>
+
+      <div class="box white" data-aos="fade-right" data-aos-duration="1100">
+        <img src="images/assets/concentrate.png" height="200px" alt="" />
+        <h3>Better concetration</h3>
+        <p>Student Corner is designed<br>for people who are struggling with concentration and for those who want to improve their concentration skills.</p>
+      </div>
+
+      <div class="box darkBlue" data-aos="fade-right" data-aos-duration="1400">
+        <img src="images/assets/productive.png" height="200px" alt="" />
+        <h3>Productivity boost</h3>
+        <p>With Student Corner,<br>you are boosting your productivity<br>and all of this is thanks to our selection of tools.</p>
+      </div>
+    </div>
+    </section>
+
+    <section id="sectionthree" class="benefits">
+      <h1 class="heading">Tools</h1>
+
+      <div class="box-container">
+        <div class="box lightBlue" data-aos="fade-right">
+          <img src="images/assets/calendar.png" height="290px" alt="" />
+          <h3>Agenda <span class="tooltip" data-tooltip="Reminders and deadlines will be shown here">?</span> </h3>
+
+        </div>
+
+        <div class="box white" data-aos="fade-right" data-aos-duration="1100">
+          <img src="images/assets/todo.png" height="290px" alt="" />
+          <h3>To-Do list <span class="tooltip" data-tooltip="Tasks that are to be done will be shown here">?</span> </h3>
+        </div>
+
+        <div class="box darkBlue" data-aos="fade-right" data-aos-duration="1400" onclick="location.href='notes.html';" style="cursor:pointer">
+          <img src="images/assets/notebook.png" height="290px" alt="" />
+          <h3>Notebook <span class="tooltip" data-tooltip="Saved notes will be shown here">?</span> </h3>
+        </div>
+      </div>
+      </section>
+  <footer class="footer">
+    <div class="waves">
+    <div class="wave" id="wave1"></div>
+    <div class="wave" id="wave2"></div>
+    <div class="wave" id="wave3"></div>
+    <div class="wave" id="wave4"></div>
+    </div>
+    <p style="opacity: 0.75;">Created for students by students.</p>
+      <ul class="footermenu">
+      <li class="menu__item"><a class="menu__link" href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+      <li class="menu__item"><a class="menu__link" href="https://www.instagram.com/digital_dream_blog/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+      <li class="menu__item"><a class="menu__link" href="mailto:digitaldream11@gmail.com"><i class="fa-solid fa-paper-plane"></i></a></li>
+      </ul>
+</footer>
+
+<div id="popup1" class="overlay">
+<div class="popup">
+  <h2>Focus Mode used for:</h2> <br>
+  <h3> <i class="fa-regular fa-clock"></i> 00:00 </h3><br>
+  <a class="close" href="#">&times;</a>
+  <div class="content">
+    <a href="#popup2" class="getStarted button"> Connect with your phone </a> <br><br>
+    <h3>Block notifications from:</h3> <br>
+    <div class="field input-field">
+            <input type="name" placeholder="name" class="password" />
+            <i class="fa-solid fa-trash-can" style="cursor:pointer;"></i>
+          </div>
+      <br>
+    <h2><i class="fa-solid fa-volume-high" style="cursor:pointer;"></i> Play concentration music ?</h2><br>
+
+
+  </div>
+</div>
+</div>
+
+<div id="popup2" class="overlay">
+<div class="popup">
+  <h2>Focus Mode used for:</h2> <br>
+  <h3> <i class="fa-regular fa-clock"></i> 00:00 </h3><br>
+  <a class="close" href="#">&times;</a>
+  <a class="back" href="#popup1"><i class="fa-solid fa-left-long"></i></a>
+  <div class="content">
+    <h4>Scan the QR to turn Focus <br>mode on your phone</h4><br>
+    <img src="images/assets/qr.png" height="200px" alt="">
+      <br>
+  </div>
+</div>
+</div>
+
+<%- include("./partials/footer") %>

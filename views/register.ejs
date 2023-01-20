@@ -1,0 +1,31 @@
+<%- include("./partials/header") %>
+
+<div class="form signup">
+  <div class="form-content">
+    <header>Register</header>
+    <form action="/register" method="POST">
+      <div class="field input-field">
+        <input type="email" name="email" placeholder="E-mail" class="input" />
+      </div>
+
+      <div class="field input-field">
+        <input type="password" placeholder="Create password" class="password"name="password"/>
+        <i class="bx bx-hide eye-icon"></i>
+      </div>
+
+      <div class="field button-field">
+        <button type="submit">Confirm</button>
+      </div>
+    </form>
+
+    <div class="form-link">
+      <span
+        >Already have an account?
+        <a href="/login" class="link login-link">Login</a></span
+      >
+    </div>
+  </div>
+</div>
+
+
+<%- include("./partials/footer") %>
