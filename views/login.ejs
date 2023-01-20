@@ -24,9 +24,6 @@
 <div class="form login">
   <div class="form-content">
     <header>Login</header>
-    <% if (messages.error) { %>
-      <%= messages.error %>
-    <% } %>
     <form action="/login" method="POST">
       <div class="field input-field">
         <input type="email" placeholder="E-mail" name="email"class="input" id="exampleInputEmail1"/>
