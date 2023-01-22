@@ -88,7 +88,7 @@ function displayColors() {
     let other = document.querySelector('.other');
 
     // requesting the colors for the events
-    fetch("http://localhost:3000/getColors")
+    fetch("http://studentcorner.onrender.com/getColors")
         .then(data => data.json())
         .then(res => {
 
@@ -125,7 +125,7 @@ function displayColors() {
 function displayEvents() {
     //fetch request to agendaItems...
     console.log("fetch all agenda items");
-    fetch("http://localhost:3000/agendaItems")
+    fetch("http://studentcorner.onrender.com/agendaItems")
         .then(data => data.json()) //make the data a json file
         .then(resp => {
             events = resp.agenda; //put the response inthe list of events
@@ -258,7 +258,7 @@ function DetailedEventsPreview  ()  {
                             eventBox.remove();
     
                             // deleting event in the back-end
-                            fetch('http://localhost:3000/EVENT', {
+                            fetch('http://studentcorner.onrender.com/EVENT', {
                                 method: 'DELETE',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -291,7 +291,7 @@ function DetailedEventsPreview  ()  {
                                     let reminder = document.querySelector(".updateReminder").value
                                     
                                     // post for updating the event in the back-end
-                                    fetch('http://localhost:3000/updateEvent', {
+                                    fetch('http://studentcorner.onrender.com/updateEvent', {
                                         method: 'POST',
                                         headers: { 'Content-Type': 'application/json' },
                                         body: JSON.stringify({
@@ -353,7 +353,7 @@ let eventId;
 
 // deleting the event in the back-end by id
 function deleteEvent(id) {
-    fetch('http://localhost:3000/deleteEvent', {
+    fetch('http://lostudentcorner.onrender.com/deleteEvent', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

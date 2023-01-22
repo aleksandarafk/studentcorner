@@ -78,7 +78,7 @@ cardTheme.forEach(elem => {
         `;
 
         //sends the title, date and the color to the server 
-        fetch('http://localhost:3000/addnote', {
+        fetch('http://studentcorner.onrender.com/addnote', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -125,7 +125,7 @@ cardTheme.forEach(elem => {
 function displayNotes() {
     console.log('fetch get notes')
     //this fetch requests all the notes from the server
-    fetch('http://localhost:3000/notesItems')
+    fetch('http://studentcorner.onrender.com/notesItems')
         .then(data => data.json())
         .then(resp => {
             //the res returns an array with all the notes
@@ -173,7 +173,7 @@ function displayNotes() {
                             console.log(newTitle)
 
                             //this fetch edit/save the note by sending the edited note ID and the new text
-                            fetch('http://localhost:3000/updatenote', {
+                            fetch('http://studentcorner.onrender.com/updatenote', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -202,7 +202,7 @@ function displayNotes() {
                     let id= card.dataset.id;
 
                     //this fetch sends delete request to the server which removes it from the database
-                    fetch('http://localhost:3000/deletenotes', {
+                    fetch('http://studentcorner.onrender.com/deletenotes', {
                         method: 'DELETE',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
