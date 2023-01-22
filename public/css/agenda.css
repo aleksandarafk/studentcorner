@@ -1,0 +1,449 @@
+:root
+{
+  --black: #070707;
+  --darkBlue: #53599A;
+  --lightBlue: #6D9DC5;
+  --neonBlue: #AEECEF;
+  --white: #FFFDF7;
+  --lightPurple: #BABDD7;
+}
+
+/* Main Agenda Styling */
+.container__agenda {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar__agenda {
+    margin-top: 13rem;
+    width: 30rem;
+    height: 38rem;
+    background-color: var(--lightPurple);
+    border-radius: 10px;
+    /* box-shadow: 0.5rem 3rem rgba(0, 0, 0, .4); */
+}
+
+.month__agenda {
+    width: 100%;
+    height: 7rem;
+    background-color: var(--lightPurple);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    border-radius: 10px;
+    /* text-shadow: 0.3rem .5rem rgba(0, 0, 0, .5); */
+}
+
+.month__agenda i {
+    cursor: pointer;
+}
+
+hr {
+    width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--white);
+}
+
+.weekdays__agenda {
+    /* font-size: 1.5rem; */
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-size: 1.25rem;
+}
+
+.weekdays__agenda div {
+    width: calc(29.2rem/7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days__agenda {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+    height: 21rem;
+}
+
+.days__agenda div {
+    font-size: 1.25rem;
+    margin: 0.3rem;
+    width: calc(25.2rem/7);
+    height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40%;
+    transition: .25s;
+    cursor: pointer;
+}
+
+.days__agenda div:hover {
+    background-color: #f7f3f38b;
+}
+
+.prev-date,
+.next-date {
+    opacity: .5;
+}
+
+.today {
+    border: 0.09rem solid rgba(0, 0, 0, 0.281);
+}
+
+.buttons__agenda {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.fa-gear {
+    cursor: pointer;
+}
+
+.edit__event__agenda,
+.add__event__agenda,
+.save__settings__agenda {
+    text-decoration: none;
+    background: var(--darkBlue);
+    color: var(--white);
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem 0.5rem;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+
+.add__event__agenda:hover {
+    background: var(--lightBlue);
+}
+
+/* Modals Styling */
+
+.modal__settings__agenda {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal__event__agenda3 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal__event__agenda {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.modal-content2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 40rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.modal-content3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 40rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button2 {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button3 {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.close-button2:hover {
+    background-color: darkgray;
+}
+
+.close-button3:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show-modal2 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show-modal3 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.agenda__settings__title {
+    margin-bottom: 1rem;
+}
+
+.agenda__event__name,
+.agenda__event__description {
+    width: 35rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-bottom: 1px solid var(--darkBlue);
+    text-decoration: none;
+    outline: none;
+    padding-left: 2px;
+}
+
+.agenda__event__description {
+    color: #736969;
+}
+
+.cmb-event {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.tick {
+    width: 0.02rem;
+    height: 0.01rem;
+}
+
+/* Styling for the container for displaying events */
+.chosenday__events {
+    display: none;
+    width: 30rem;
+    height: 38rem;
+    background-color: var(--lightPurple);
+    margin-top: 13rem;
+    margin-left: -0.5rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.close-section {
+   width: inherit;
+    height: 2rem;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.fa-xmark {
+    margin-right: 1rem;
+}
+
+.cont--cards {
+    width: 27rem;
+    margin-left: 1.5rem;
+    padding-left: 0.5rem;
+
+}
+
+.cont--date {
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.event--card {
+    margin-top: 1rem;
+    width: 27rem;
+    height: 5.5rem;
+    background-color: var(--white);
+    border-radius: 5px;
+    padding-left: 3px;
+}
+
+.main--info--event {
+    width: 26rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info1 {
+    width: 24rem;
+    height: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.event--info--color {
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem ;
+    margin-left: 2px;
+    background-color: orange;
+}
+
+.event--info--name{
+    height: 2rem;
+    margin-left: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.event--info--completion {
+    width: 2rem;
+    height: 2rem;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info2 {
+    display: flex;
+    align-items: center;
+}
+
+.fa-trash {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.info--description {
+    width: 27rem;
+    height: 3rem;
+    margin-top: 4px;
+    padding-left: 2px;
+    font-size: 0.7rem;
+    color: #2826268b;
+}
+
+.circleContainer {
+    background-color: transparent;
+    position: absolute;
+    height: 20px !important;
+    margin-top: 3rem !important;
+    display: flex;
+}
+
+.circleContainer:hover {
+    background-color: unset !important;
+    color: unset !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .container__agenda {
+        display: grid;
+    }
+
+    .buttons__agenda {
+        height: 3vh;
+    }
+
+    .chosenday__events {
+        margin-top: -17.5rem;
+        margin-left: 0.05rem;
+        z-index: -1;
+        border-radius: 10px;
+    }
+}

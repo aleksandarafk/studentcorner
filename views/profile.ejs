@@ -1,0 +1,114 @@
+<%- include("./partials/header") %>
+<link rel="stylesheet" href="/css/profile.css">
+
+    <nav>
+      <input type="checkbox" id="check" class="navbar close">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><a href="/home"><img src="images/assets/logo.png" height="80px"></a></label>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/home/#sectionthree">Tools</a></li>
+    
+        <li><a href="/profile"><i class="fa-solid fa-user" height="50px"></i></a></li>
+        <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+        </label>
+        <li><a href="/profile/#popup1"><i class="fa-solid fa-ellipsis-vertical"></i></i></a></li>
+      </ul>
+    </nav>
+    <div class="profile">
+        <div class="profile-picture">
+          <img src="images/assets/graph.png" height="350px">
+        </div>
+        <div class="profile-info">
+          <input type="text" id="email" name="email" value="<%= user.email %>" disabled><br><br>
+          <button type="button" id="button-edit" onclick="toggleEnable('email','button-edit', 'button-done')">Edit</button>
+          <button type="button" id="button-done" onclick="submitFunction('email','button-edit', 'button-done')" hidden>Done</button>
+        </div>
+        </div>
+      
+      <div class="achievements">
+          <p>Achievements</p>
+        <div id="contentAchievements">
+          <div id="list">
+          </div>
+        </div>
+      </div>
+      
+      
+  <div id="popup1" class="overlay">
+    <div class="popup">
+      <h2>Focus Mode used for:</h2> <br>
+      <h3> <i class="fa-regular fa-clock"></i> 00:00 </h3><br>
+      <a class="close" href="/profile">&times;</a>
+      <div class="content">
+        <a href="/profile/#popup2" class="getStarted button"> Connect with your phone </a> <br><br>
+        <h3>Block notifications from:</h3> <br>
+        <div class="field input-field">
+                <input type="name" placeholder="name" class="password" />
+                <i class="fa-solid fa-trash-can" style="cursor:pointer;"></i>
+              </div>
+          <br>
+        <h2><i class="fa-solid fa-volume-high" style="cursor:pointer;"></i> Play concentration music ?</h2><br>
+  
+  
+      </div>
+    </div>
+  </div>
+  
+  <div id="popup2" class="overlay">
+    <div class="popup">
+      <h2>Focus Mode used for:</h2> <br>
+      <h3> <i class="fa-regular fa-clock"></i> 00:00 </h3><br>
+      <a class="close" href="#">&times;</a>
+      <a class="back" href="#popup1"><i class="fa-solid fa-left-long"></i></a>
+      <div class="content">
+        <h4>Scan the QR to turn Focus <br>mode on your phone</h4><br>
+        <img src="images/assets/qr.png" height="200px" alt="">
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/profile.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="https://kit.fontawesome.com/7b3c62550d.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+  AOS.init();
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+      <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"
+    ></script>
+    <script>
+      $(document).ready(function()
+      {
+        setInterval(() => {
+          Achievements.initialize('myGame')
+          $('#list').html(Achievements.list);
+        }, 1000);
+      });
+      </script>
+      
+  <script>
+    $(document).ready(function()
+    {
+      Achievements.initialize('myGame');
+		Achievements.register('I started', 'Congrats');
+    Achievements.register('I created a note', 'Congrats');
+    Achievements.register('I added a task', 'Congrats');
+    Achievements.register('I added an event', 'Congrats');
+    });
+  </script>
+
+    <%- include("./partials/footer") %>

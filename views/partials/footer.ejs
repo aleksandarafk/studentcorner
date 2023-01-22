@@ -1,6 +1,40 @@
+<div id="popup1" class="overlay">
+  <div class="popup">
+    <h2>Study Mode used for:</h2> <br>
+    <h3 class="timer-nums"> <i class="fa-regular fa-clock "></i> 00:00:00 </h3><br>
+    <a class="close" href="#">&times;</a>
+    <div class="content">
+      <a href="#popup2" class="getStarted button"> Connect with your phone </a> <br><br>
+      <h3 class=>Block notifications from:</h3> <br>
+      <div class="field input-field">
+              <input type="name" placeholder="name" class="password" />
+              <i class="fa-solid fa-trash-can" style="cursor:pointer;"></i>
+            </div>
+        <br>
+   <h2 class="soundTitle">Play concentration music ?</h2><i class="fa-solid fa-volume-mute soundBtn" style="cursor:pointer;"></i><br>
+      <audio id="music-audio" src="/images/assets/music.mp3"></audio>
+
+    </div>
+  </div>
+</div>
+
+<div id="popup2" class="overlay">
+  <div class="popup">
+    <a class="close" href="#">&times;</a>
+    <a class="back" href="#popup1"><i class="fa-solid fa-left-long"></i></a>
+    <div class="content">
+      <h4>Scan the QR to turn Focus <br>mode on your phone</h4><br>
+      <img src="/images/assets/QR.png" height="250px" alt="">
+        <br>
+    </div>
+  </div>
+</div>
 
 <script src="scripts/script.js"></script>
 <script src="scripts/login.js"></script>
+<script src="scripts/agenda.js"></script>
+<script src="scripts/agendaEvents.js"></script>
+<script src="scripts/profile.js"></script>
 <script src="https://kit.fontawesome.com/7b3c62550d.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -11,6 +45,16 @@ AOS.init();
 $(window).on("load", function() {
   $(".loader-wrapper").fadeOut("slow");
 });
+</script>
+<script>
+  $(document).ready(function()
+  {
+  Achievements.initialize('myGame');
+  Achievements.register('I started', 'Congrats');
+  Achievements.register('I created a note', 'Congrats');
+  Achievements.register('I added a task', 'Congrats');
+  Achievements.register('I added an event', 'Congrats');
+  });
 </script>
 </body>
 </html>

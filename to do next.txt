@@ -1,0 +1,6 @@
+to do next:
+fix days logic for proper display
+fix edit modal
+edit in database
+delete events
+reminders

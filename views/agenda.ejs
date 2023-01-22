@@ -1,0 +1,203 @@
+<%- include("./partials/header") %>
+<link rel="stylesheet" href="/css/profile.css">
+
+    <nav>
+        <input type="checkbox" id="check" class="navbar close">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"><a href="#home"><img src="images/assets/logo.png" height="80px"></a></label>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home/#sectionthree">Tools</a></li>
+            <li><a href="/profile"><i class="fa-solid fa-user" height="50px"></i></a></li>
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+            </label>
+            <li><a href="/agenda/#popup1"><i class="fa-solid fa-ellipsis-vertical"></i></i></a></li>
+        </ul>
+    </nav>
+    <!-- Agenda Component -->
+    <div class="container__agenda">
+        <div class="calendar__agenda">
+            <div class="month__agenda">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date__agenda">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <i class="fas fa-angle-right next"></i>
+            </div>
+            <hr>
+            <div class="weekdays__agenda">
+                <div>mon</div>
+                <div>tue</div>
+                <div>wed</div>
+                <div>thu</div>
+                <div>fri</div>
+                <div>sat</div>
+                <div>sun</div>
+            </div>
+            <div class="days__agenda">
+
+            </div>
+            <div class="buttons__agenda">
+                <i class="fa-solid fa-gear fa-2x trigger"></i>
+                <button type="button" class="add__event__agenda trigger2">+ Add Event</button>
+            </div>
+        </div>
+        <div class="chosenday__events">
+            <div class="close-section"><i class="fa-solid fa-xmark" id="close-cont-icon"></i></div>
+            <div class="cont--date" id="dateForCont"></div>
+            <hr>
+            <div class="cont--cards"></div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal for Color Settings -->
+    <div class="modal__settings__agenda">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h1 class="agenda__settings__title">Agenda Settings</h1>
+            <form action="/color" method="POST">
+            <!-- <form> -->
+                <label for="settings__deadline">Deadline:</label>
+                <input type="color" id="colorSettings" class="colorSettings deadline" name="deadline"><br><br>
+                <label for="settings__assignment">Assignment:</label>
+                <input type="color" id="colorSettings" class="colorSettings assignment" name="assignment"><br><br>
+                <label for="settings__exam">Exam:</label>
+                <input type="color" id="colorSettings" class="colorSettings exam" name="exam"><br><br>
+                <label for="settings__shift">Shift:</label>
+                <input type="color" id="colorSettings" class="colorSettings shift" name="shift"><br><br>
+                <label for="settings__birthday">Birthday:</label>
+                <input type="color" id="colorSettings" class="colorSettings birthday" name="birthday"><br><br>
+                <label for="settings__socialhappening">Social Happening:</label>
+                <input type="color" id="colorSettings" class="colorSettings socialhappening" name="socialhappening"><br><br>
+                <label for="settings__other">Other:</label>
+                <input type="color" id="colorSettings" class="colorSettings other" name="other"><br><br>
+                <!-- <button type="button" class="save__settings__agenda" id="save__settings__agenda">Save Changes</button> -->
+                <button type="submit" class="save__settings__agenda" id="save__settings__agenda">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal for Creating Events -->
+    <div class="modal__event__agenda">
+        <div class="modal-content2">
+            <span class="close-button2">×</span>
+            <h1 class="agenda__event__title">Add an Event</h1>
+            <form action="/addEvent" method="POST">
+                <div class="inputs-event">
+                    <input type="text" name="title" class="agenda__event__name" id="agenda__event__name"
+                        placeholder="Title of the event"> <br>
+                    <input type="text" name="description" class="agenda__event__description"
+                        id="agenda__event__description" placeholder="Description the event">
+                </div>
+                <div class="cmb-event">
+                    <div class="1">
+                        <label for="type__event">Select type of event:</label> <br>
+                        <select id="choose__type__event" class="choose__type__event" name="type">
+                            <option value="deadline">Deadline</option>
+                            <option value="assignment">Assignment</option>
+                            <option value="exam">Exam</option>
+                            <option value="shift">Shift</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="socialHappening">Social Happening</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="2">
+                        <label for="date__time__event">Choose a date and time:</label> <br>
+                        <input type="datetime-local" id="date__time__event" class="date__time__event" name="date"
+                            min="2022-06-07T00:00" max="2024-06-14T00:00">
+                    </div>
+
+                    <div class="3">
+                        <label for="reminder__event">Set a reminder:</label> <br>
+                        <select id="reminder__event" class="reminder__event" name="reminder">
+                            <option value="noreminder">No reminder</option>
+                            <option value="5min">5 minutes before</option>
+                            <option value="10min">10 minutes before</option>
+                            <option value="30min">30 minutes before</option>
+                            <option value="1hr">1 hour before</option>
+                            <option value="6hr">6 hours before</option>
+                            <option value="12hr">12 hours before</option>
+                            <option value="24hr">24 hours before</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="add__event__agenda trigger2" id="add__event__agenda" onclick="Achievements.show('I added an event');">Add Event</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+        <!-- Modal for Editing Events -->
+        <div class="modal__event__agenda3">
+            <div class="modal-content3">
+                <span class="close-button3" id="close3">×</span>
+                <h1 class="agenda__event__title">Edit Event</h1>
+                <form >
+                    <div class="inputs-event">
+                        <input type="text" name="title" class="agenda__event__name updateTitle" id="agenda__event__name1"
+                            placeholder="Title of the event"> <br>
+                        <input type="text" name="description" class="agenda__event__description updateDescription"
+                            id="agenda__event__description1" placeholder="Description the event">
+                    </div>
+                    <div class="cmb-event">
+                        <div class="1">
+                            <label for="type__event">Select type of event:</label> <br>
+                            <select id="choose__type__event1" class="choose__type__event updateType" name="type">
+                                <option value="deadline">Deadline</option>
+                                <option value="assignment">Assignment</option>
+                                <option value="exam">Exam</option>
+                                <option value="shift">Shift</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="socialHappening">Social Happening</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+    
+                        <div class="2">
+                            <label for="date__time__event">Choose a date and time:</label> <br>
+                            <input type="datetime-local" id="date__time__event1" class="date__time__event updateTime" name="date"
+                                min="2022-06-07T00:00" max="2024-06-14T00:00">
+                        </div>
+    
+                        <div class="3">
+                            <label for="reminder__event">Set a reminder:</label> <br>
+                            <select id="reminder__event1" class="reminder__event updateReminder" name="reminder">
+                                <option value="noreminder">No reminder</option>
+                                <option value="5min">5 minutes before</option>
+                                <option value="10min">10 minutes before</option>
+                                <option value="30min">30 minutes before</option>
+                                <option value="1hr">1 hour before</option>
+                                <option value="6hr">6 hours before</option>
+                                <option value="12hr">12 hours before</option>
+                                <option value="24hr">24 hours before</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" class="edit__event__agenda trigger3" id="edit__event__agenda">Save Event</button>
+                </form>
+            </div>
+        </div>
+        <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br/><span id="text">Some text</span></div>
+
+        <script src="scripts/profile.js""></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        <script>
+            $(document).ready(function()
+            {
+            Achievements.initialize('myGame');
+                Achievements.register('I started', 'Congrats');
+            Achievements.register('I created a note', 'Congrats');
+            Achievements.register('I added a task', 'Congrats');
+            Achievements.register('I added an event', 'Congrats');
+            });
+          </script>
+    <%- include("./partials/footer") %>

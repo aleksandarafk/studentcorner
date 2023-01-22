@@ -1,8 +1,67 @@
 <%- include("./partials/header") %>
-
-<div class="container mt-5">
-    <a href="/logout" class="btn btn-danger">Logout</a>
-    <h2>Welcome <%= user.email %> </h2>
+<nav>
+    <input type="checkbox" id="check" class="navbar close">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="/home"><img src="images/assets/logo.png" height="80px"></a></label>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/home/#sectionthree">Tools</a></li>
+  
+      <li><a href="/profile"><i class="fa-solid fa-user" height="50px"></i></a></li>
+      <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+      </label>
+      <li><a href="/home/#popup1"><i class="fa-solid fa-ellipsis-vertical"></i></i></a></li>
+    </ul>
+  </nav>
+<section id="home">
+  <div class="text-box-1">
+    <div class="container mt-5">
+      <h1>Welcome, <%= user.email %></h1>
+      <a href="/login" class="logout">Logout</a>
+    </div>
+  </div>
+  <div class="wbtools">
+  <a href="/agenda"> 
+    <img src="images/assets/calendar.png" height="390px" alt="" />
+</a>
+<a class="imgtodo" href="/todo">
+  <img src="images/assets/todo.png" height="390px" alt="" />
+  </a>
 </div>
+  <div class="boxy">
+    <a href="home/#sectionthree">
+      <span></span>
+      <span></span>
+    </a>
+  </div>
+</section>
+
+<section id="sectionthree" class="benefits">
+  <h1 class="heading">Tools</h1>
+
+  <div class="box-container">
+   <a href="/agenda"> <div class="box lightBlue" data-aos="fade-right">
+      <img src="images/assets/calendar.png" height="290px" alt="" />
+      <h3>Agenda <span class="tooltip" data-tooltip="Reminders and deadlines will be shown here">?</span> </h3>
+
+    </div></a>
+
+    <a href="/todo"><div class="box white" data-aos="fade-right" data-aos-duration="1100">
+      <img src="images/assets/todo.png" height="290px" alt="" />
+      <h3>To-Do list <span class="tooltip" data-tooltip="Tasks that are to be done will be shown here">?</span> </h3>
+    </div></a>
+
+    <a href="/notes"><div class="box darkBlue" data-aos="fade-right" data-aos-duration="1400" style="cursor:pointer">
+      <img src="images/assets/notebook.png" height="290px" alt="" />
+      <h3>Notebook <span class="tooltip" data-tooltip="Saved notes will be shown here">?</span> </h3>
+    </div></a>
+  </div>
+  </section>
+
+
 
 <%- include("./partials/footer") %>

@@ -34,7 +34,7 @@
   <div class="text-box">
     <h1> Welcome to <br> Study Corner</h1>
     <p> Are you ready to learn ?</p>
-    <a href="#" class="getStarted"> Get Started </a>
+    <input href="/" class="getStarted" name="Button1" type="button" value="Get Started" onclick="Achievements.show('I started');"></input>
   </div>
   <div class="boxy">
     <a href="#sectiontwo">
@@ -42,6 +42,7 @@
     <span></span>
   </a>
   </div>
+  <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br/><span id="text">Some text</span></div>
   </section>
 
   <section id="sectiontwo" class="benefits">
@@ -71,21 +72,21 @@
       <h1 class="heading">Tools</h1>
 
       <div class="box-container">
-        <div class="box lightBlue" data-aos="fade-right">
+       <a href="/agenda"> <div class="box lightBlue" data-aos="fade-right">
           <img src="images/assets/calendar.png" height="290px" alt="" />
           <h3>Agenda <span class="tooltip" data-tooltip="Reminders and deadlines will be shown here">?</span> </h3>
 
-        </div>
+        </div></a>
 
-        <div class="box white" data-aos="fade-right" data-aos-duration="1100">
+        <a href="/todo"><div class="box white" data-aos="fade-right" data-aos-duration="1100">
           <img src="images/assets/todo.png" height="290px" alt="" />
           <h3>To-Do list <span class="tooltip" data-tooltip="Tasks that are to be done will be shown here">?</span> </h3>
-        </div>
+        </div></a>
 
-        <div class="box darkBlue" data-aos="fade-right" data-aos-duration="1400" onclick="location.href='notes.html';" style="cursor:pointer">
+        <a href="/notes"><div class="box darkBlue" data-aos="fade-right" data-aos-duration="1400" style="cursor:pointer">
           <img src="images/assets/notebook.png" height="290px" alt="" />
           <h3>Notebook <span class="tooltip" data-tooltip="Saved notes will be shown here">?</span> </h3>
-        </div>
+        </div></a>
       </div>
       </section>
   <footer class="footer">
@@ -102,39 +103,5 @@
       <li class="menu__item"><a class="menu__link" href="mailto:digitaldream11@gmail.com"><i class="fa-solid fa-paper-plane"></i></a></li>
       </ul>
 </footer>
-
-<div id="popup1" class="overlay">
-<div class="popup">
-  <h2>Focus Mode used for:</h2> <br>
-  <h3> <i class="fa-regular fa-clock"></i> 00:00 </h3><br>
-  <a class="close" href="#">&times;</a>
-  <div class="content">
-    <a href="#popup2" class="getStarted button"> Connect with your phone </a> <br><br>
-    <h3>Block notifications from:</h3> <br>
-    <div class="field input-field">
-            <input type="name" placeholder="name" class="password" />
-            <i class="fa-solid fa-trash-can" style="cursor:pointer;"></i>
-          </div>
-      <br>
-    <h2><i class="fa-solid fa-volume-high" style="cursor:pointer;"></i> Play concentration music ?</h2><br>
-
-
-  </div>
-</div>
-</div>
-
-<div id="popup2" class="overlay">
-<div class="popup">
-  <h2>Focus Mode used for:</h2> <br>
-  <h3> <i class="fa-regular fa-clock"></i> 00:00 </h3><br>
-  <a class="close" href="#">&times;</a>
-  <a class="back" href="#popup1"><i class="fa-solid fa-left-long"></i></a>
-  <div class="content">
-    <h4>Scan the QR to turn Focus <br>mode on your phone</h4><br>
-    <img src="images/assets/qr.png" height="200px" alt="">
-      <br>
-  </div>
-</div>
-</div>
 
 <%- include("./partials/footer") %>

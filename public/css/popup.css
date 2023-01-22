@@ -23,6 +23,7 @@ h1
   opacity: 1;
 }
 
+
 .popup
 {
   position: absolute;
@@ -151,4 +152,8 @@ h1
   {
     font-size: 80px;
   }
+}
+
+.playMusicTitle{
+  font-size: 2rem;
 }

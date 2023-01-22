@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+    <script src="https://kit.fontawesome.com/56942480bb.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>To-Do List</title>
+</head>
+<body>
+  <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/todo.css">
+    <nav>
+      <input type="checkbox" id="check" class="navbar close">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><a href="/"><img src="images/assets/logo.png" height="80px"></a></label>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/home/#sectionthree">Tools</a></li>
+    
+        <li><a href="/profile"><i class="fa fa-user" height="50px"></i></a></li>
+        <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+        </label>
+        <li><a href="/todo/#popup1"><i class="fa fa-ellipsis-v"></i></i></a></li>
+      </ul>
+    </nav>
+
+      
+      <section class="body">
+        <span>
+        <h1 class="heading">Your To-do List</h1>
+        
+        </span>
+
+        <div class="container">
+          <div class="wrapper">
+              <div class="left">
+                  <span class="add_card" placeholder="put a card here">
+                    
+                    <button class="add"><i class="fas fa-plus-circle fa-4x"></i></button>
+                  </span>
+                      <ul class="card_themes">
+                          <li class="card_theme" style="--i: 1; background-color: #924561;" onclick="Achievements.show('I added a task');"></li>
+                          <li class="card_theme" style="--i: 2; background-color: #976795;" onclick="Achievements.show('I added a task');"></li>
+                          <li class="card_theme" style="--i: 3; background-color: #87AED9;" onclick="Achievements.show('I added a task');"></li>
+                          <li class="card_theme" style="--i: 4; background-color: #53599A;" onclick="Achievements.show('I added a task');"></li>
+                      </ul>
+              </div>
+              <div class="right">
+                  <div id="myLinks" class="card_container">
+                   
+                      <div class="card card_template">
+                          <i class="fas fa-plus" style="font-size: 30px;"></i> <br>
+                          Add a task
+                      </div>
+                      <!--Cards go here-->
+    
+                  </div>
+              </div>
+          </div>
+      </div>
+        
+            
+      <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br/><span id="text">Some text</span></div>
+
+    
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+        </div>
+      </section>
+      <script src="https://kit.fontawesome.com/7b3c62550d.js" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/56942480bb.js" crossorigin="anonymous"></script>
+    <script src="scripts/todo.js"></script>
+    <script src="scripts/profile.js""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      $(document).ready(function()
+      {
+      Achievements.initialize('myGame');
+          Achievements.register('I started', 'Congrats');
+      Achievements.register('I created a note', 'Congrats');
+      Achievements.register('I added a task', 'Congrats');
+      Achievements.register('I added an event', 'Congrats');
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<%- include("./partials/header") %>
+<link rel="stylesheet" href="/css/notes.css">
+<link rel="stylesheet" href="/css/profile.css">
+
+    <nav>
+      <input type="checkbox" id="check" class="navbar close">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><a href="/home"><img src="images/assets/logo.png" height="80px"></a></label>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/home/#sectionthree">Tools</a></li>
+    
+        <li><a href="/profile"><i class="fa-solid fa-user" height="50px"></i></a></li>
+        <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+        </label>
+        <li><a href="/notes/#popup1"><i class="fa-solid fa-ellipsis-vertical"></i></i></a></li>
+      </ul>
+    </nav>
+
+    <section id="notes">
+        
+        <div class="container">
+            <div class="wrapper">
+                <div class="left">
+                    <span class="add_card">
+                       <i class="fas fa-plus-circle" ></i>
+                        <ul class="card_themes">
+                           
+                           <button class="colorBtn" color="#924561"> <li class="card_theme" style="--i: 1; background-color: #924561;" onclick="Achievements.show('I created a note');"></li></button>
+                           <button class="colorBtn" color="#976795"><li class="card_theme" style="--i: 2; background-color: #976795;" onclick="Achievements.show('I created a note');"></li></button>
+                            <button class="colorBtn" color="#BABDD7"><li class="card_theme" style="--i: 4; background-color: #BABDD7;" onclick="Achievements.show('I created a note');"></li></button>
+                            <button class="colorBtn" color="#87AED9"><li class="card_theme" style="--i: 3; background-color: #87AED9;" onclick="Achievements.show('I created a note');"></li></button>
+                            
+                        </ul>
+                </div>
+                <div class="right">
+                    <div>
+                        <h1 class="notes_title">Your Notes</h1>
+                    </div>
+                    <div class="card_container">
+                        <div class="card card_template">
+                            <i class="fas fa-plus"></i> <br>
+                            Add a Note
+                        </div>
+                        <!--Cards go here-->
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="status" class="achievement"><span class="title">Achievement unlocked</span><br/><span id="text">Some text</span></div>
+
+    </section>
+
+    <script src="scripts/notes.js"></script>
+    <script src="scripts/profile.js""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function()
+        {
+        Achievements.initialize('myGame');
+            Achievements.register('I started', 'Congrats');
+        Achievements.register('I created a note', 'Congrats');
+        Achievements.register('I added a task', 'Congrats');
+        Achievements.register('I added an event', 'Congrats');
+        });
+      </script>
+    <%- include("./partials/footer") %>
