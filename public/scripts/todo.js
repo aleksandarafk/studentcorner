@@ -111,7 +111,7 @@ cardTheme.forEach(elem =>{
 
 
             //this fetch edit/save the note by sending the edited note ID and the new text
-            fetch('http://studentcorner.onrender.com/updatetodo', {
+            fetch('https://studentcorner.onrender.com/updatetodo', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -128,7 +128,7 @@ cardTheme.forEach(elem =>{
     })
                 
         //sends the title, date and the color to the server 
-        fetch('http://studentcorner.onrender.com/addtodo', {
+        fetch('https://studentcorner.onrender.com/addtodo', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -139,7 +139,7 @@ cardTheme.forEach(elem =>{
         })
 
      //sends the title, description and the color to the server
-// fetch('http://localhost:3000/addTodo', {
+// fetch('https://localhost:3000/addTodo', {
 //     method: 'POST',
 //     headers: { 'Content-Type': 'application/json' },
 //     body: JSON.stringify({
@@ -176,7 +176,7 @@ cardTheme.forEach(elem =>{
 function displayTodos() {
     console.log('fetch get todo')
     //this fetch requests all the todo lists from the server
-    fetch('http://studentcorner.onrender.com/todoItems')
+    fetch('https://studentcorner.onrender.com/todoItems')
         .then(data => data.json())
         .then(resp => {
             //the res returns an array with all the todo lists
@@ -256,7 +256,7 @@ function displayTodos() {
 
 
                             //this fetch edit/save the note by sending the edited note ID and the new text
-                            fetch('http://studentcorner.onrender.com/updatetodo', {
+                            fetch('https://studentcorner.onrender.com/updatetodo', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -281,7 +281,7 @@ function displayTodos() {
                     let id= card.dataset.id;
 
                     //this fetch sends delete request to the server which removes it from the database
-                    fetch('http://studentcorner.onrender.com/deletetodo', {
+                    fetch('https://studentcorner.onrender.com/deletetodo', {
                         method: 'DELETE',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({

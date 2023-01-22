@@ -88,7 +88,7 @@ function displayColors() {
     let other = document.querySelector('.other');
 
     // requesting the colors for the events
-    fetch("http://studentcorner.onrender.com/getColors")
+    fetch("https://studentcorner.onrender.com/getColors")
         .then(data => data.json())
         .then(res => {
 
@@ -125,7 +125,7 @@ function displayColors() {
 function displayEvents() {
     //fetch request to agendaItems...
     console.log("fetch all agenda items");
-    fetch("http://studentcorner.onrender.com/agendaItems")
+    fetch("https://studentcorner.onrender.com/agendaItems")
         .then(data => data.json()) //make the data a json file
         .then(resp => {
             events = resp.agenda; //put the response inthe list of events
@@ -258,7 +258,7 @@ function DetailedEventsPreview  ()  {
                             eventBox.remove();
     
                             // deleting event in the back-end
-                            fetch('http://studentcorner.onrender.com/EVENT', {
+                            fetch('https://studentcorner.onrender.com/EVENT', {
                                 method: 'DELETE',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -291,7 +291,7 @@ function DetailedEventsPreview  ()  {
                                     let reminder = document.querySelector(".updateReminder").value
                                     
                                     // post for updating the event in the back-end
-                                    fetch('http://studentcorner.onrender.com/updateEvent', {
+                                    fetch('https://studentcorner.onrender.com/updateEvent', {
                                         method: 'POST',
                                         headers: { 'Content-Type': 'application/json' },
                                         body: JSON.stringify({
@@ -335,7 +335,7 @@ DetailedEventsPreview()
 
 
 function updateEvent(id, title, description) {
-    // fetch('http://localhost:3000/updateEvent', {
+    // fetch('https://localhost:3000/updateEvent', {
     //     method: 'POST',
     //     headers: { 'Content-Type': 'application/json' },
     //     body: JSON.stringify({
@@ -353,7 +353,7 @@ let eventId;
 
 // deleting the event in the back-end by id
 function deleteEvent(id) {
-    fetch('http://lostudentcorner.onrender.com/deleteEvent', {
+    fetch('https://lostudentcorner.onrender.com/deleteEvent', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
